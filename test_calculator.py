@@ -3,22 +3,14 @@ import unittest
 
 from calculator import *
 class TestCalculator(unittest.TestCase):
-    ######### Partner 2
-     def test_add(self):
+    def test_add(self):
          self.assertEqual(add(1,2),3)
          self.assertEqual(add(5,4), 9)
          self.assertEqual(add(-5,4),-1)
-
-
-
-     def test_subtract(self):
+    def test_subtract(self):
          self.assertEqual(subtract(15,3),12)
          self.assertEqual(subtract(2,3),-1)
          self.assertEqual(subtract(7,4),3)
-
-
-
-    ######## Partner 1
     def test_multiply(self): # 3 assertions
          self.assertEqual(mul(5,3), 15)
          self.assertEqual(mul(-7, 3), -21)
@@ -28,33 +20,30 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(div(1,3),3)
         self.assertEqual(div(5, 25), 5)
         self.assertEqual(div(-1, 5), -5)
-    # ##########################
 
-    ######## Partner 2
-     def test_divide_by_zero(self):
+
+    def test_divide_by_zero(self):
             with self.assertRaises(ZeroDivisionError):
                 (div(0,5),9)
 
 
 
-     def test_logarithm(self):
+    def test_logarithm(self):
         self.assertEqual(logarithm(8,8),1)
         self.assertEqual(logarithm(5,5),1)
         self.assertEqual(logarithm(2,2),1)
 
 
 
-     def test_log_invalid_base(self):
+    def test_log_invalid_base(self):
         with self.assertRaises(ValueError):
-            (log(0,  1), -2)
+            (logarithm(0,  1), -2)
 
-    
-    ######## Partner 1
+
     def test_log_invalid_argument(self): # 1 assertion
     #     # call log function inside, example:
         with self.assertRaises(ValueError):
             logarithm(10, -5)
-    #     fill in code
 
     def test_hypotenuse(self): # 3 assertions
         self.assertEqual(hypotenuse(3,4), 5)
